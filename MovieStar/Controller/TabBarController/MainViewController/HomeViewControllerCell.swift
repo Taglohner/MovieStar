@@ -173,10 +173,9 @@ class StyleOneHorizontalViewControllerCell: UICollectionViewCell {
             
             movieName.text = movie.title
             
-            networkManager.getImageDataFrom("https://image.tmdb.org/t/p/w200/\(movie.posterPath)") { (data, error) in
+            networkManager.getImageDataFrom("https://image.tmdb.org/t/p/w300/\(movie.posterPath)") { (data, error) in
                 if error == nil {
                     DispatchQueue.main.async {
-                        
                         guard let data = data else { return }
                         self.movieCover.image = UIImage(data: data)
                     }
@@ -199,7 +198,6 @@ class StyleOneHorizontalViewControllerCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "cover_placeholder")
         imageView.contentMode = .scaleAspectFit
-        //        imageView.backgroundColor = .blue
         return imageView
     }()
     

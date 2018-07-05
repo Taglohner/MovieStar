@@ -30,19 +30,24 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let navigationBar = self.navigationController?.navigationBar {
-            navigationBar.setupNavigationBar()
-        }
-        
         self.navigationItem.title = "Home"
 
         fetchMovies()
         setupCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let navigationBar = self.navigationController?.navigationBar {
+            navigationBar.setupDefaultNavigationBar()
+        }
+    }
+    
     func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 68, 0)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .darkGray

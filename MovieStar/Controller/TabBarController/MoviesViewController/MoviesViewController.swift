@@ -9,15 +9,18 @@
 import UIKit
 
 class MoviesViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .darkGray
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         if let navigationBar = self.navigationController?.navigationBar {
-            navigationBar.setupNavigationBar()
+            navigationBar.setupDefaultNavigationBar()
         }
-        
-        view.backgroundColor = .darkGray
     }
 }
 

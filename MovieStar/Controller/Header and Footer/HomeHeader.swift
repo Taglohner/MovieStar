@@ -31,7 +31,7 @@ class StyleOneHeader: UICollectionReusableView {
     
     let seeMoreButton: UIButton = {
         let button = UIButton()
-        let attributedTitle = NSAttributedString(string: "See More", attributes: [NSAttributedStringKey.foregroundColor: UIColor.yellow, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
+        let attributedTitle = NSAttributedString(string: "See More", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 16)])
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()
